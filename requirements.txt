@@ -1,0 +1,10 @@
+streamlit
+pandas
+numpy
+folium
+branca
+openpyxl
+Pillow
+scipy
+scikit-learn
+streamlit-folium
