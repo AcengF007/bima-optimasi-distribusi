@@ -317,7 +317,7 @@ if not st.session_state.authenticated:
                 st.session_state.authenticated = True
                 st.rerun()
             else:
-                st.error("Nama user atau sandi tidak sesuai.")
+                st.error("Nama pengguna atau sandi tidak sesuai.")
 
     st.stop()
 
