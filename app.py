@@ -1944,10 +1944,12 @@ def render_vehicle_management(client: Client) -> None:
 # STAFF TRANSPORTASI
 # ============================================================
 def get_daily_orders_df(client: Client) -> pd.DataFrame:
-    rows = fetch_all(client, "daily_orders", "id,tanggal,store_id,demand,created_at", "tanggal")
+    # Hanya ambil kolom inti yang benar-benar digunakan oleh aplikasi.
+    # created_at bersifat opsional dan tidak diperlukan untuk proses rekomendasi.
+    rows = fetch_all(client, "daily_orders", "id,tanggal,store_id,demand", "tanggal")
     df = pd.DataFrame(rows)
     if df.empty:
-        return pd.DataFrame(columns=["id","tanggal","store_id","demand","created_at"])
+        return pd.DataFrame(columns=["id","tanggal","store_id","demand"])
     df["tanggal"] = pd.to_datetime(df["tanggal"], errors="coerce").dt.date
     df["store_id"] = pd.to_numeric(df["store_id"], errors="coerce").astype("Int64")
     df["demand"] = pd.to_numeric(df["demand"], errors="coerce")
