@@ -8,3 +8,4 @@ Pillow
 scipy
 scikit-learn
 streamlit-folium
+supabase
