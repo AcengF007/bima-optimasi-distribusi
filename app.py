@@ -247,7 +247,7 @@ def render_app_header(role_label: str | None = None) -> None:
                 <div class="bima-header">
                     <img class="bima-header-logo" src="{uri}" alt="Logo PT BIMA">
                     <div>
-                        <div class="bima-header-title">
+                        <div class="bima-header-title"><br></br>
                         Sistem Pendukung Keputusan Optimasi Distribusi Logistik</div>
                         <div class="bima-header-subtitle">PT Bukit Inti Makmur Abadi</div>
                         {role_html}
